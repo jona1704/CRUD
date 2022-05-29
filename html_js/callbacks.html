@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+    <script>
+        // Callback: Es una función que es usada como parámetro en otra función
+
+        // Ejemplo 1:
+        //function mensaje(nombre){
+        //     console.log("Hola ", nombre);
+        //}
+
+        //mensaje();
+
+        // En vez de pasar una cadena ahora pasamos como parámetro
+        // una función
+
+        // Ejemplo 2:
+        /*function callback(){
+             console.log("Yo soy un callback");
+        }
+
+        function mensaje(fn){
+            fn();
+        }
+
+        mensaje(callback);*/
+
+        // NOTA: Regularmente las funciones son síncronas (una después de otra)
+        // function funcion1(){
+        //      console.log("mensaje 1");
+        // }
+
+        // function funcion2(){
+        //      console.log("mensaje 2");
+        // }
+
+        // funcion1(); // mensaje 1
+        // funcion2(); // mensaje 2
+
+        // Entonces, Cuando usar un callback? 
+        // Cuando la programación es asíncrona
+        
+        // Ejemplo 3:
+        // function funcion1(fn){
+        //     setTimeout(function(){
+        //         console.log("mensaje 1");
+        //         //fn();
+        //     }, 1000); // 1000ms = 1s
+        // }
+
+        // function funcion2(){
+        //     console.log("mensaje 2");
+        // }
+
+        // // Ejecucion Síncrona pero con setTimeout es asíncrona
+        // funcion1(); // 2: mensaje 2
+        // funcion2(); // 1: mensaje 1
+
+        // Ahora con callback: Aseguramos ejecutar primero la función1
+        // y luego la función2
+
+        // Ejemplo 4:
+        function funcion1(fn){
+            setTimeout(function(){
+                console.log("mensaje 1");
+                fn();
+            }, 1000);
+        }
+
+        function funcion2(){
+            console.log("mensaje 2");
+        }
+        
+        funcion1(funcion2);
+    </script>
+</body>
+</html>

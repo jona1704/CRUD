@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Hell</title>
+</head>
+<body>
+    <script>
+        // Callbacks es solo el nombre por convención para las
+        // funciones usadas en Javascript. No hay una cosa especial
+        // llamada 'callback' en el lenguaje JavaSript, es solo una 
+        // convención. En vez de inmediatamente retornar algún 
+        // resultado como muchas funciones, las funciones que usan
+        // callbacks toman algún tiempo para producir un resultado.
+
+        // La palabra 'Asíncrono', solo significa que 'toma algún teimpo' o
+        // 'sucede en el futuro, no ahora mismo'. Usualmente los callbacks
+        // son solo usados cuando hacemos procesamiento de I/O, es decir, 
+        // descargar cosas, leer archivos, tomar datos de una base de datos,
+        // etc.
+
+        // API
+        // 1: 2s student roll not
+        // 2: 2s 2nd name and age
+        // 3: gender
+
+        const getRollNo = () => {
+            setTimeout(() => {
+                console.log('API getting roll no.');
+                let roll_no = [1, 2, 3, 4, 5];
+                console.log(roll_no);
+
+                setTimeout((rollno) => {
+                    const biodata = {
+                        name: 'Jonathan',
+                        age: 30
+                    };
+                    console.log(`My roll no es ${rollno}. My name es ${biodata.name} and I am 
+                    ${biodata.age} years old`);
+
+                    setTimeout((name) => {
+                        biodata.gender = 'male';
+                        console.log(`My roll no es ${rollno}. My name es ${biodata.name} and I am 
+                    ${biodata.age} years old. I am an alpha ${biodata.gender}`);
+                    }, 2000, biodata.name);
+                }, 2000, roll_no[1]);
+            }, 2000);
+        }
+
+        getRollNo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        // Promesas: Para peticiones asíncronas y disminuir el uso excesivo de callbacks
+        // en los programas
+        
+        // Ejemplo 1:
+        let p = new Promise(function(resolve, reject){
+            let suma = 2+6;
+            if(suma === 8){
+                resolve("Correcto!");
+            } else{
+                reject("Error!");
+            }
+        });
+
+        // Usamos dos metodos de promises
+        //.then esta asociado con la función resolve
+        //.catch esta asociado con la función rejected
+        
+        p.then(function(mensaje){
+            console.log(mensaje);
+        }).catch(function(error){
+            console.log(error);
+        });
+
+        // Ejemplo 2:
+        // Creamos una función que retorne una promesa
+        // function miPromesa(){
+        //     return new Promise(function(resolve, reject){
+        //         let suma = 2+6;
+        //         if(suma === 8){
+        //             resolve("Correcto!");
+        //         } else{
+        //             reject("Error!");
+        //         }
+        //     });
+        // }
+
+        // miPromesa().then(function(mensaje){
+        //     console.log(mensaje);
+        // }).catch(function(error){
+        //     console.log(error);
+        // });
+
+        // Ejemplo 3: 
+        // Simular una ressspuesta enviada por un API o una base de datos
+        
+        function miPromesa(){
+            return new Promise(function(resolve, reject){
+                let isHomeworkDone = true; // Checar con true o false
+                if(isHomeworkDone === true){
+                    let phone = {
+                        color: "negro",
+                        brand: "iPhone"
+                    };
+                    resolve(phone);
+                } else{
+                    reject("No obtuviste un iPhone!");
+                }
+            });
+        }
+
+        // Otra promesa
+        function mostrarPhone(mensaje){
+            return new Promise(function(resolve, reject){
+                if(mensaje){
+                    resolve("Obtuviste un " + mensaje.brand);
+                } else{
+                    reject("Error");
+                }
+            });
+        }
+
+        // Vamos a retornar otra promesa despuéss de haber obtenido
+        // el mensaje de otra promesa
+        miPromesa().then(function(mensaje){ // then 1ra. Promesa
+            return mostrarPhone(mensaje);
+        }).then(function(respuesta){ // then 2da. Promesa
+            console.log(respuesta);
+        }).catch(function(error){
+            console.log(error);
+        })
+    </script>
+</body>
+</html>

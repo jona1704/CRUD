@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@700&family=Work+Sans&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Work Sans', sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: green;
+    color: white;
+}
+
+#divNuevo{
+    padding: 25px 0;
+}
+
+.btnNuevo{
+    background-color: blue;
+    color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+main{
+    background-color: white;
+    height: 100%;
+    padding-bottom: 30px;
+}
+
+form{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+fieldset{
+    padding: 20px;
+    font-weight: 900;
+}
+
+label, input, textarea{
+    display: block;
+    width: 100%;
+}
+
+label{
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+input[type=text], input[type=number], input[type=file]{
+    height: 30px;
+    margin-bottom: 2px;
+}
+
+input[type=submit]{
+    background-color: green;
+    color: white;
+    border: 1px solid #008000;
+    font-size: 20px;
+    margin: 20px auto;
+    width: 50%;
+    height: 30px;
+}
+
+input[type=submit]:hover{
+    background-color: black;
+    border: 1px solid black;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin-top: 40px; 
+}
+
+.form-field.error input, .form-field.error textarea{
+    border: 1px solid red; 
+}
+
+.form-field.success input, .form-field.success textarea{
+    border: 1px solid green; 
+}
+
+.form-field small {
+    color: red;
+}
+
+.form-field input:focus, .form-field textarea:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 768px){
+    input[type=submit]{
+        width: 100%;
+    }
+}

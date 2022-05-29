@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        // Las promesas se pueden mostrar en tres estados:
+        /*
+            Pending, Fulfilled y Rejected.
+            Pending es una transición a Fulfilled o Rejected
+
+            Fulfilled: Esto significa que la operación asincrónica se ha completado y la Promesa tiene un valor
+            Rejected: Esto significa que la operación asíncrona ha fallado y la Promesa nunca se cumplirá.
+        */
+
+        // Vamos a consumir datos de un estudio de animación llamado: Studio Ghibli
+        //const fetchPromise = fetch("https://ghibliapi.herokuapp.com/people");
+        //console.log(fetchPromise); // Retorna una promesa no los datos
+
+        // Para extraer los datos usaremos el método Promise.prototye.then 
+        // con el fin de adjuntar un callback una vez que la promesa se 
+        // ha completado
+        // fetchPromise.then(response => {
+        //     console.log(response);
+        // });
+
+        // Sabiendo la respuesta de la API,  necesitamos obtener el body
+        // en formato JSON, por lo que usaremos el método json(). Esta
+        // operación es asíncrona. El método json() realmente retornará
+        // una Promise, por lo que necesitaremos crear una cadena de 
+        // Promesas.
+        // fetchPromise.then(response => {
+        //     return response.json();
+        // }).then(people => {
+        //     console.log(people);
+        // });
+
+        // De la información que hemos obtenido vamos a obtener
+        // solo el nombre de una persona. Para trabsformar el objeto
+        // que recibimos vamos a hacer uso de la función map().
+        // Después de aplicar map() uniremos cada nombre con un salto de línea
+        // fetchPromise.then(response => {
+        //     return response.json();
+        // }).then(people => {
+        //     //const names = people.map(person => person.name).join("\n");
+        //     //console.log(names); 
+
+        //     // Adjuntaremos los nombres al elemento main
+        //     main.innerHTML = listOfNames(people);
+        // });
+
+        // Podemos mostrar al usuario que se estan cargando los 
+        // datos cuando recargamos la página
+
+        const URL = "https://ghibliapi.herokuapp.com/people";
+
+        const main = document.getElementById("main");
+        main.innerHTML = "<p>Loading...";
+
+        fetch(URL)
+            .then((response) => response.json())
+            .then((people) => main.innerHTML = getListOfNames(people));
+
+        // Vamos a mejorar la presentación
+        const getListOfNames = (people) => {
+            const names = people
+                .map((person) => `<li>${person.name}</li>`)
+                .join("\n");
+
+            return `<ul>${names}</ul>`;
+        };
+    </script>
+</body>
+</html>

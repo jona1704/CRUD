@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas Flexibles</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background: #e91e63;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .container{
+            padding: 2rem 5%;
+        }
+
+        .flex{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .card{
+            background: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+            flex: 1 0 20rem;
+            display: flex; /* */
+            flex-direction: column; /* */
+        }
+
+        .card h1{
+            margin-bottom: 15px;
+            text-transform: capitalize;
+            color: #e91e63;
+            font-size: 2.4rem;
+        }
+
+        .card p{
+            text-align: justify;
+            line-height: 130%;
+            margin-bottom: 20px;
+        }
+
+        .btn{
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #e91e63;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.5s ease-in-out;
+            border-radius: 5px;
+            border: 1px solid #e91e63;
+            margin: 10px 0;
+            margin-top: auto; /* */
+            align-self: flex-start; /* */
+        }
+
+        .btn:hover{
+            background-color: transparent;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex">
+            <div class="card">
+                <h1>Card One</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Corporis cupiditate ipsam provident aliquid deleniti reiciendis 
+                    doloribus sequi quidem pariatur laudantium ipsa incidunt 
+                    ullam natus omnis, numquam eveniet laborum commodi! Nemo.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="card">
+                <h1>Card Two</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus, recusandae.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="card">
+                <h1>Card Three</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, 
+                    temporibus? Itaque quibusdam molestiae optio pariatur at. Obcaecati 
+                    possimus autem, expedita illo iure alias earum mollitia consequuntur, 
+                    minima similique, corporis vitae? In dolore illum dicta ut incidunt 
+                    quasi at harum veritatis id est, asperiores ex et voluptas nesciunt 
+                    unde ab, ea obcaecati repellendus ad adipisci odit.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="card">
+                <h1>Card Four</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus, recusandae.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="card">
+                <h1>Card Five</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, 
+                    temporibus? Itaque quibusdam molestiae optio pariatur at. Obcaecati 
+                    possimus autem, expedita illo iure alias earum mollitia consequuntur, 
+                    minima similique, corporis vitae? In dolore illum dicta ut incidunt 
+                    quasi at harum veritatis id est, asperiores ex et voluptas nesciunt 
+                    unde ab, ea obcaecati repellendus ad adipisci odit.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

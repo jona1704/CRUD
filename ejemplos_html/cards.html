@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas de Productos</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:  #efefef;
+            line-height: 1.5;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+        .container{
+            width: 1100px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .row{
+            display: flex;
+            flex-wrap: wrap; /* */
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card{
+            flex: 1 1 20rem;
+            display: flex; /* */
+            flex-direction: column; /**/
+            align-items: center; /* */
+            flex-wrap: wrap;
+            margin: 10px 20px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            padding: 10px 20px;
+            align-self: normal;
+        }
+
+        .card img{
+            max-width: 200px;
+        }
+
+        .card h4{
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+
+        .card p{
+            margin-bottom: 10px;
+        }
+
+        .card .btn{
+            display: inline-block;
+            margin-top: auto; /* */
+            background: green;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <img src="../img/empty.jpeg" alt="Imagen Producto">
+                <h4>Pasta</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, est? Expedita laudantium unde exercitationem eius perspiciatis quia vitae suscipit illo?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, laborum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis?</p>
+                <a href="#" class="btn">Leer Mas</a>
+            </div>
+            <div class="card">
+                <img src="../img/empty.jpeg" alt="Imagen Producto">
+                <h4>Cheswan</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, est? Expedita laudantium unde exercitationem eius perspiciatis quia vitae suscipit illo?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, laborum!</p>
+                <a href="#" class="btn">Leer Mas</a>
+            </div>
+            <div class="card">
+                <img src="../img/empty.jpeg" alt="Imagen Producto">
+                <h4>American Spicy</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, est? Expedita laudantium unde exercitationem eius perspiciatis quia vitae suscipit illo?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, laborum!</p>
+                <a href="#" class="btn">Leer Mas</a>
+            </div>
+            <div class="card">
+                <img src="../img/empty.jpeg" alt="Imagen Producto">
+                <h4>American Spicy</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, est? Expedita laudantium unde exercitationem eius perspiciatis quia vitae suscipit illo?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, laborum!</p>
+                <a href="#" class="btn">Leer Mas</a>
+            </div>
+        </div>
+    </div>    
+
+
+    <!--<div class="contenedor">
+            <div class="tarjeta">
+                <div class="imagen">
+                    <img src="../img/empty.jpeg" alt="Imagen de Articulo"> 
+                </div>
+                <div class="precio"></div>
+                <div class="descripcion"></div>
+                <div class="acciones">
+                    <div class="actualizar">
+                        <button>Actualizar</button>
+                    </div>
+                    <div class="borrar">
+                        <button>Borrar</button>
+                    </div>
+                </div>
+            </div>  
+    </div>-->        
+</body>
+</html>
